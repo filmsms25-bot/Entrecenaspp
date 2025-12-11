@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Entre Cenas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilo extra para a chamada final */
-        .chamada-entre-cenas {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(90deg, #ff6a00, #ee0979);
-        }
-        .chamada-entre-cenas p {
-            font-size: 36px;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.4;
-        }
-        /* Depoimentos justificados */
-        .depoimentos-feedbacks .texto-centralizado {
-            text-align: justify;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Entre Cenas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Estilo extra para a chamada final */
+.chamada-entre-cenas {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("img/foto.jpeg") no-repeat center center;
+    background-size: cover;
+}
+.chamada-entre-cenas p {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+}
+/* Depoimentos justificados */
+.depoimentos-feedbacks .texto-centralizado {
+    text-align: justify;
+}
+</style>
 </head>
 <body>
+
 <!-- MENU HAMBURGER SEM JS -->
 <header class="topo">
   <div class="container">
     <h1 class="logo">Entre Cenas</h1>
 
-    <!-- Checkbox escondido -->
     <input type="checkbox" id="menu-toggle" />
-
-    <!-- Label que vira o botão de três barrinhas -->
     <label for="menu-toggle" class="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </label>
 
-    <!-- Menu lateral -->
     <nav class="menu">
-      <!-- Botão X para fechar -->
+      <img src="img/logo.jpg" alt="Logo Entre Cenas" class="menu-logo">
       <label for="menu-toggle" class="close-menu">×</label>
-
       <ul>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Serviços</a></li>
@@ -91,7 +89,7 @@ No Entre Cenas, transformamos momentos reais em histórias que falam por si. Som
 </section>
 
 <!-- SERVIÇOS -->
-<section id="sobre" class="section bg-preto servicos-esquerda">
+<section id="servicos" class="section bg-preto servicos-esquerda">
     <div class="container">
         <h2>Serviços</h2>
         <div class="cards">
@@ -109,31 +107,31 @@ No Entre Cenas, transformamos momentos reais em histórias que falam por si. Som
 
 <!-- EQUIPAMENTOS -->
 <section id="equipamentos" class="equipamentos-esquerda">
-    <div class="container">
-        <h2>Equipamentos</h2>
-        <div class="cards">
-            <div class="card fade-in">
-                <img src="img/gimbal.jpg">
-                <h3>Gimbal</h3>
-                <p>O gimbal é um estabilizador que garante imagens suaves e profissionais, mesmo em movimentos mais rápidos. Ele permite capturar cenas com fluidez e elegância, deixando o vídeo mais cinematográfico..</p>
-            </div>
-            <div class="card fade-in">
-                <img src="img/cage.jpg">
-                <h3>Cage</h3>
-                <p>A cage é uma estrutura que envolve o celular e permite acoplar acessórios como microfones e luzes. Ela oferece mais firmeza, segurança e controle durante a gravação, além de ampliar as possibilidades de criação.</p>
-            </div>
-            <div class="card fade-in">
-                <img src="img/microfone.jpg">
-                <h3>Microfone</h3>
-                <p>O microfone capta o áudio com clareza e nitidez, garantindo que cada palavra, ambiente ou emoção seja registrado com alta qualidade. Ele é essencial para entregar um som limpo e profissional.</p>
-            </div>
-            <div class="card fade-in">
-                <img src="img/celular.jpg">
-                <h3>Celular</h3>
-                <p>Trabalhamos de forma mobile, usando o celular como ferramenta principal de captura. Com a tecnologia atual, os smartphones oferecem uma qualidade impressionante de vídeo e uma versatilidade que permite agilidade, praticidade e resultados surpreendentes sem perder a estética profissional.</p>
-            </div>
+  <div class="container">
+    <h2>Equipamentos</h2>
+    <div class="cards">
+        <div class="card">
+          <img src="img/gimbal.jpg" alt="Gimbal">
+          <h3>Gimbal</h3>
+          <p>O gimbal é um estabilizador que garante imagens suaves e profissionais, mesmo em movimentos mais rápidos.</p>
+        </div>
+        <div class="card">
+          <img src="img/cage.jpg" alt="Cage">
+          <h3>Cage</h3>
+          <p>A cage é uma estrutura que envolve o celular e permite acoplar acessórios como microfones e luzes.</p>
+        </div>
+        <div class="card">
+          <img src="img/microfone.jpg" alt="Microfone">
+          <h3>Microfone</h3>
+          <p>O microfone capta o áudio com clareza e nitidez, garantindo um som limpo e profissional.</p>
+        </div>
+        <div class="card">
+          <img src="img/celular.jpg" alt="Celular">
+          <h3>Celular</h3>
+          <p>Trabalhamos de forma mobile, usando o celular como ferramenta principal de captura.</p>
         </div>
     </div>
+  </div>
 </section>
 
 <!-- BASTIDORES -->
@@ -147,37 +145,37 @@ No Entre Cenas, transformamos momentos reais em histórias que falam por si. Som
     </div>
 </section>
 
-<!-- COMO O ENTRE CENAS TRABALHA -->
+<!-- COMO TRABALHAMOS -->
 <section id="como-trabalhamos" class="section como-trabalhamos-esquerda">
-    <div class="container">
-        <h2>Como o Entre Cenas Trabalha</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>1. Primeiro contato</h3>
-                <p>No início, converso com você para entender sua necessidade, o tipo de evento, o objetivo do vídeo e tudo que deseja transmitir. Essa etapa é essencial para criar uma conexão verdadeira e construir algo que faça sentido para você.</p>
-            </div>
-            <div class="card">
-                <h3>2. Entendendo o seu estilo</h3>
-                <p>Cada cliente tem uma identidade única. Por isso, busco compreender seu gosto, referências e expectativas. Essa leitura permite que o resultado final tenha a sua essência — seja algo mais emocional, moderno, dinâmico ou elegante.</p>
-            </div>
-            <div class="card">
-                <h3>3. Planejamento criativo</h3>
-                <p>Com as informações principais definidas, preparo o roteiro visual do que será captado, organizo os melhores ângulos, luzes, momentos e o estilo de narrativa que será usado. Tudo é pensado para deixar o resultado impecável e coerente com o que você imaginou.</p>
-            </div>
-            <div class="card">
-                <h3>4. Captação dos momentos</h3>
-                <p>Durante o evento, acompanho tudo com um olhar atento e técnico, registrando a essência de cada situação. Meu objetivo é captar gestos, expressões e detalhes que muitas vezes passam despercebidos, criando imagens verdadeiras e cheias de vida.</p>
-            </div>
-            <div class="card">
-                <h3>5. Edição e pós-produção</h3>
-                <p>Aqui acontece a mágica. Seleciono os melhores takes, faço correções de cor, montagem, ritmo e trilha, construindo um vídeo envolvente e com personalidade. É essa etapa que transforma as imagens brutas em algo único.</p>
-            </div>
-            <div class="card">
-                <h3>6. Entrega do material final</h3>
-                <p>A entrega é realizada de acordo com o tipo de projeto, respeitando o tempo necessário para que cada vídeo seja finalizado com o máximo de qualidade. Cada evento pede um cuidado especial — por isso o prazo pode variar conforme a complexidade do trabalho.</p>
-            </div>
+  <div class="container">
+    <h2>Como o Entre Cenas Trabalha</h2>
+    <div class="cards">
+        <div class="card">
+          <h3>1. Primeiro contato</h3>
+          <p>No início, converso com você para entender sua necessidade, o tipo de evento, o objetivo do vídeo e tudo que deseja transmitir...</p>
+        </div>
+        <div class="card">
+          <h3>2. Entendendo o seu estilo</h3>
+          <p>Cada cliente tem uma identidade única. Por isso, busco compreender seu gosto, referências e expectativas...</p>
+        </div>
+        <div class="card">
+          <h3>3. Planejamento criativo</h3>
+          <p>Com as informações principais definidas, preparo o roteiro visual do que será captado...</p>
+        </div>
+        <div class="card">
+          <h3>4. Captação dos momentos</h3>
+          <p>Durante o evento, acompanho tudo com um olhar atento e técnico...</p>
+        </div>
+        <div class="card">
+          <h3>5. Edição e pós-produção</h3>
+          <p>Aqui acontece a mágica. Seleciono os melhores takes, faço correções de cor, montagem, ritmo e trilha...</p>
+        </div>
+        <div class="card">
+          <h3>6. Entrega do material final</h3>
+          <p>A entrega é realizada de acordo com o tipo de projeto, respeitando o tempo necessário...</p>
         </div>
     </div>
+  </div>
 </section>
 
 <!-- EQUIPE -->
@@ -211,33 +209,32 @@ No Entre Cenas, transformamos momentos reais em histórias que falam por si. Som
         <p class="texto-centralizado">
             Nada é mais gratificante do que ver o brilho nos olhos de quem confia no nosso trabalho. Neste vídeo, você confere o depoimento de uma cliente que viveu a experiência Entre Cenas e se apaixonou pelo resultado. Agradecemos por cada palavra. É por clientes como ela que fazemos o que fazemos. 🎥✨
         </p>
-        <!-- Vídeo centralizado -->
         <div class="video-depoimento">
             <video src="video/dej.curto.mp4" controls></video>
         </div>
-        <!-- Carrossel de fotos -->
         <div class="carousel-depoimentos">
-            <div class="cards">
-                <img src="img/logoq.jpeg" alt="Depoimento 1">
-                <img src="img/logoq.jpeg" alt="Depoimento 2">
-                <img src="img/logoq.jpeg" alt="Depoimento 3">
-                <img src="img/logoq.jpeg" alt="Depoimento 4">
-            </div>
+          <div class="cards">
+              <img src="img/logoq.jpeg" alt="Depoimento 1">
+              <img src="img/logoq.jpeg" alt="Depoimento 2">
+              <img src="img/logoq.jpeg" alt="Depoimento 3">
+              <img src="img/logoq.jpeg" alt="Depoimento 4">
+          </div>
         </div>
     </div>
 </section>
 
-<!-- Chamada elegante centralizada -->
+<!-- Chamada final -->
 <section class="chamada-entre-cenas">
-    <div class="container">
-        <p>Entre Cenas, onde cada momento vira história. Posso contar a sua? 🤎</p>
-    </div>
+  <div class="container">
+    <p class="linha1">Entre Cenas,</p>
+    <p class="linha2">onde cada momento vira história.</p>
+    <p class="linha3">Posso contar a sua? 🤎</p>
+  </div>
 </section>
 
 <!-- CONTATO -->
 <section class="section">
     <h2>Entre em contato conosco pelo WhatsApp</h2>
-   
 </section>
 
 <!-- RODAPÉ -->
@@ -250,5 +247,6 @@ No Entre Cenas, transformamos momentos reais em histórias que falam por si. Som
     <img src="img/icone.webp" alt="WhatsApp">
 </a>
 
+<script src="animacao.js"></script>
 </body>
 </html>

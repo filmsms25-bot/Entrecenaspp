@@ -1,4 +1,4 @@
-/* RESET */
+/* ---------------- RESET ---------------- */ 
 * {
   margin: 0;
   padding: 0;
@@ -6,29 +6,29 @@
   font-family: Arial, sans-serif;
 }
 
-/* BODY */
+/* ---------------- BODY ---------------- */
 body {
   background: #000;
   color: #fff;
+  padding-top: 70px; /* para compensar topo fixo */
 }
 
-/* CONTAINER */
+/* ---------------- CONTAINER ---------------- */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* TOPO FIXO */
+/* ---------------- TOPO FIXO ---------------- */
 .topo {
-  background: rgba(0,0,0,0.85); /* leve transparência para ficar flutuante */
+  background: rgba(0,0,0,1);
   padding: 15px 0;
-  position: fixed; /* fixa no topo */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  backdrop-filter: blur(6px); /* efeito de desfoque atrás do topo */
 }
 
 .topo .container {
@@ -37,20 +37,15 @@ body {
   align-items: center;
 }
 
-/* Adiciona espaçamento ao início do conteúdo para não ficar atrás do topo */
-body {
-  padding-top: 70px; /* ajuste de acordo com a altura do topo */
-}
-
 .logo {
   color: #fff;
   font-family: 'Rosean', serif;
 }
 
-/* BANNER */
+/* ---------------- BANNER ---------------- */
 .banner {
   height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("img/foto.jpeg");
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("img/foto2.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -60,14 +55,14 @@ body {
   text-align: center;
 }
 
-/* DIGITAÇÃO */
+/* ---------------- DIGITAÇÃO ---------------- */
 .digitar {
   font-size: 20px;
   font-family: 'Rosean', serif;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  animation: maquina 2s steps(24) forwards;
+  animation: maquina 2s steps(24) forwards, blink 0.7s step-end infinite;
 }
 
 @keyframes maquina {
@@ -75,7 +70,12 @@ body {
   to { width: 24ch; }
 }
 
-/* FRASE + VÍDEO */
+@keyframes blink {
+  50% { border-color: transparent; }
+  100% { border-color: #fff; }
+}
+
+/* ---------------- FRASE + VÍDEO ---------------- */
 .frase-video {
   padding: 100px 90px;
   background: radial-gradient(circle, #111, #000);
@@ -120,7 +120,7 @@ body {
   margin: 0 auto;
 }
 
-/* SOBRE */
+/* ---------------- SOBRE ---------------- */
 .section {
   padding: 60px 20px;
   text-align: center;
@@ -156,7 +156,7 @@ body {
   text-align: justify;
 }
 
-/* FOTO SOBRE */
+/* ---------------- FOTO SOBRE ---------------- */
 .foto-sobre {
   text-align: center;
   padding: 40px 20px;
@@ -167,10 +167,12 @@ body {
   border-radius: 12px;
 }
 
-/* CARDS */
+/* ---------------- CARDS ---------------- */
 .cards {
   display: flex;
   gap: 20px;
+  width: 100%;
+  position: relative;
 }
 
 .card {
@@ -204,7 +206,7 @@ body {
   opacity: 0.8;
 }
 
-/* SERVIÇOS */
+/* ---------------- SERVIÇOS ---------------- */
 .servicos-esquerda {
   text-align: left;
 }
@@ -218,7 +220,7 @@ body {
   flex-direction: column;
 }
 
-/* EQUIPAMENTOS - CARROSSEL */
+/* ---------------- EQUIPAMENTOS ---------------- */
 .equipamentos-esquerda {
   text-align: left;
 }
@@ -246,7 +248,7 @@ body {
   display: none;
 }
 
-/* BOTÃO */
+/* ---------------- BOTÃO ---------------- */
 .btn {
   background: #25d366;
   color: #fff;
@@ -256,7 +258,7 @@ body {
   display: inline-block;
 }
 
-/* BOTÃO WHATSAPP */
+/* ---------------- BOTÃO WHATSAPP ---------------- */
 .whatsapp-float {
   position: fixed;
   bottom: 15px;
@@ -276,7 +278,7 @@ body {
   width: 26px;
 }
 
-/* BASTIDORES */
+/* ---------------- BASTIDORES ---------------- */
 .bastidores-esquerda .container {
   max-width: none !important;
   margin-left: 0 !important;
@@ -305,7 +307,7 @@ body {
   text-align: justify;
 }
 
-/* COMO O ENTRE CENAS TRABALHA - CARROSSEL */
+/* ---------------- COMO O ENTRE CENAS TRABALHA ---------------- */
 .como-trabalhamos-esquerda {
   text-align: left !important;
   padding-left: 20px;
@@ -358,7 +360,7 @@ body {
   }
 }
 
-/* EQUIPE - TEXTO + FOTO + VÍDEO CENTRALIZADOS */
+/* ---------------- EQUIPE ---------------- */
 .equipe {
   text-align: left;
   padding-left: 20px;
@@ -413,7 +415,7 @@ body {
   object-fit: cover;
 }
 
-/* DEPOIMENTOS / FEEDBACKS */
+/* ---------------- DEPOIMENTOS ---------------- */
 .depoimentos-feedbacks {
   text-align: center;
   padding: 60px 20px;
@@ -445,6 +447,7 @@ body {
   margin: 0 auto 30px auto;
 }
 
+/* Carrossel de fotos de depoimentos */
 .carousel-depoimentos .cards {
   display: flex;
   gap: 20px;
@@ -465,28 +468,43 @@ body {
   display: none;
 }
 
-/* CHAMADA CENTRALIZADA E CHAMATIVA - LUZ, CÂMERA E AÇÃO */
+/* ---------------- CHAMADA FINAL ---------------- */
 .chamada-entre-cenas {
-  background: linear-gradient(135deg, #111, #000);
-  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 16px;
-  margin: 60px 0;
+  min-height: 50vh;
+  padding: 50px 20px;
+  color: #fff;
+  background: #000;
+   font-family: 'Rosean', serif; /* força a fonte Rosean em toda a seção */
 }
 
 .chamada-entre-cenas p {
-  font-family: 'Rosean', serif;
-  font-size: 32px; /* reduzido de 48px para 32px */
-  color: #fff;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: none;
+  font-size: 2rem;
+  margin: 10px 0;
+   font-family: 'Rosean', serif !important; /* garante a fonte */
 }
 
-/* RODAPÉ */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.digitando {
+  animation: typing 1s steps(40,end) forwards, blink 0.6s infinite;
+}
+
+.linha1.digitando { animation-delay: 0s; }
+.linha2.digitando { animation-delay: 1s; }
+.linha3.digitando { animation-delay: 2s; }
+
+/* ---------------- RODAPÉ ---------------- */
 footer {
   text-align: center;
   padding: 20px;
@@ -494,7 +512,7 @@ footer {
   opacity: 0.8;
 }
 
-/* PADRÃO PARA TODOS OS H2 */
+/* ---------------- H2/H3 GERAL ---------------- */
 h2 {
   font-family: 'Rosean', serif !important;
   font-size: 48px !important;
@@ -503,7 +521,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* PADRÃO PARA TODOS OS H3 */
 h3 {
   font-family: 'Rosean', serif !important;
   font-size: 30px !important;
@@ -512,14 +529,10 @@ h3 {
   margin-bottom: 15px;
 }
 
-/* RESPONSIVO H2/H3 */
+/* ---------------- RESPONSIVO ---------------- */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 36px !important;
-  }
-  h3 {
-    font-size: 24px !important;
-  }
+  h2 { font-size: 36px !important; }
+  h3 { font-size: 24px !important; }
 
   .frase-video-container {
     flex-direction: column;
@@ -546,14 +559,6 @@ h3 {
     max-width: 100%;
   }
 
-  .sobre-esquerda {
-    text-align: left !important;
-  }
-
-  .sobre-esquerda p {
-    text-align: justify !important;
-  }
-
   .sobre-esquerda .container {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -561,19 +566,21 @@ h3 {
     max-width: 100% !important;
   }
 
-  .chamada-entre-cenas p {
-    font-size: 24px; /* Responsivo também menor */
+  .sobre-esquerda p { text-align: justify !important; }
+
+  .chamada-entre-cenas .linha1,
+  .chamada-entre-cenas .linha2,
+  .chamada-entre-cenas .linha3 {
+    font-size: 18px;
+    animation-duration: 4s;
   }
+
+  .digitar { font-size: 18px !important; }
 }
 
-/* --------------------- MENU HAMBURGER COM X --------------------- */
+/* ---------------- MENU HAMBURGER ---------------- */
+#menu-toggle { display:none; }
 
-/* Checkbox escondido */
-#menu-toggle {
-  display: none;
-}
-
-/* Hamburger */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -591,17 +598,25 @@ h3 {
   border-radius: 2px;
 }
 
-/* Menu lateral */
 .menu {
   position: fixed;
   top: 0;
-  left: -300px; /* escondido */
+  left: -300px;
   width: 300px;
   height: 100%;
-  background: #111;
   padding-top: 80px;
   transition: left 0.3s ease;
   z-index: 1001;
+  background-color: #211000;
+}
+
+.menu-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  z-index: 1004;
 }
 
 .menu ul {
@@ -621,12 +636,11 @@ h3 {
   font-size: 20px;
 }
 
-/* Mostrar menu quando checkbox marcado */
 #menu-toggle:checked ~ .menu {
   left: 0;
+  background: #211000;
 }
 
-/* Botão X para fechar */
 .menu label.close-menu {
   position: absolute;
   top: 20px;
@@ -637,28 +651,21 @@ h3 {
   z-index: 1003;
 }
 
-/* Desktop: ocultar hamburger e menu */
+/* DESKTOP: ajustes */
 @media (min-width: 1024px) {
-  .hamburger,
-  .menu {
-    display: none;
+  .equipamentos-esquerda .cards,
+  .como-trabalhamos-esquerda .cards,
+  .carousel-depoimentos .cards {
+    overflow: hidden; /* evita scroll manual */
+    gap: 20px;
   }
-.digitar {
-  font-family: 'Rosean', serif !important;
-  font-size: 32px !important; /* agora força o tamanho menor */
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: maquina 2s steps(24) forwards, blink 0.7s step-end infinite;
-}
 
-@keyframes maquina {
-  from { width: 0; }
-  to { width: 24ch; }
-}
+  .equipamentos-esquerda .card,
+  .como-trabalhamos-esquerda .card {
+    flex: 0 0 45%;
+  }
 
-@keyframes blink {
-  50% { border-color: transparent; }
-  100% { border-color: #fff; }
+  .carousel-depoimentos .cards img {
+    flex: 0 0 250px;
+  }
 }
-
