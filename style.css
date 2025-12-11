@@ -1,0 +1,664 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* TOPO FIXO */
+.topo {
+  background: rgba(0,0,0,0.85); /* leve transparência para ficar flutuante */
+  padding: 15px 0;
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  backdrop-filter: blur(6px); /* efeito de desfoque atrás do topo */
+}
+
+.topo .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Adiciona espaçamento ao início do conteúdo para não ficar atrás do topo */
+body {
+  padding-top: 70px; /* ajuste de acordo com a altura do topo */
+}
+
+.logo {
+  color: #fff;
+  font-family: 'Rosean', serif;
+}
+
+/* BANNER */
+.banner {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("img/foto.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* DIGITAÇÃO */
+.digitar {
+  font-size: 20px;
+  font-family: 'Rosean', serif;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: maquina 2s steps(24) forwards;
+}
+
+@keyframes maquina {
+  from { width: 0; }
+  to { width: 24ch; }
+}
+
+/* FRASE + VÍDEO */
+.frase-video {
+  padding: 100px 90px;
+  background: radial-gradient(circle, #111, #000);
+}
+
+.frase-video-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.frase-lado {
+  flex: 1;
+}
+
+.frase-lado h2 {
+  font-family: 'Rosean', serif;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.frase-lado p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.video-lado {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.video-lado video {
+  width: 100%;
+  max-width: 420px;
+  height: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* SOBRE */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Rosean', serif;
+  margin-bottom: 20px;
+}
+
+.section.sobre-esquerda {
+  text-align: left !important;
+  margin-top: -80px;
+}
+
+.sobre-esquerda .container {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 20px !important;
+}
+
+.sobre-esquerda h2 {
+  font-size: 48px;
+}
+
+.sobre-esquerda p {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.8;
+  text-align: justify;
+}
+
+/* FOTO SOBRE */
+.foto-sobre {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.foto-sobre img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #000;
+  border: 2px solid #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 120px;
+  margin: 0 auto 15px;
+  border-radius: 12px;
+}
+
+.card h3 {
+  font-family: 'Rosean', serif;
+  font-size: 30px;
+}
+
+.card p {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* SERVIÇOS */
+.servicos-esquerda {
+  text-align: left;
+}
+
+.servicos-esquerda h2 {
+  font-size: 48px !important;
+  text-align: left;
+}
+
+.servicos-esquerda .cards {
+  flex-direction: column;
+}
+
+/* EQUIPAMENTOS - CARROSSEL */
+.equipamentos-esquerda {
+  text-align: left;
+}
+
+.equipamentos-esquerda .cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+}
+
+.equipamentos-esquerda .card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 1024px) {
+  .equipamentos-esquerda .card {
+    flex: 0 0 45%;
+  }
+}
+
+.equipamentos-esquerda .cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* BOTÃO */
+.btn {
+  background: #25d366;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 15px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 26px;
+}
+
+/* BASTIDORES */
+.bastidores-esquerda .container {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-left: 20px !important;
+  text-align: left !important;
+}
+
+.bastidores-esquerda h2 {
+  text-align: left !important;
+  font-size: 48px !important;
+}
+
+.bastidores-esquerda video {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin: 40px auto 0 auto;
+}
+
+.bastidores-esquerda p {
+  text-align: justify;
+}
+
+/* COMO O ENTRE CENAS TRABALHA - CARROSSEL */
+.como-trabalhamos-esquerda {
+  text-align: left !important;
+  padding-left: 20px;
+}
+
+.como-trabalhamos-esquerda h2 {
+  text-align: left !important;
+  font-size: 48px !important;
+}
+
+.como-trabalhamos-esquerda .cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+}
+
+.como-trabalhamos-esquerda .card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.como-trabalhamos-esquerda .card h3 {
+  font-family: 'Rosean', serif;
+  font-size: 30px !important;
+  margin-bottom: 10px;
+}
+
+.como-trabalhamos-esquerda .card p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  opacity: 0.85;
+}
+
+.como-trabalhamos-esquerda .cards::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .como-trabalhamos-esquerda .card {
+    flex: 0 0 45%;
+  }
+}
+
+/* EQUIPE - TEXTO + FOTO + VÍDEO CENTRALIZADOS */
+.equipe {
+  text-align: left;
+  padding-left: 20px;
+  margin-top: -80px;
+}
+
+.equipe .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.equipe h2 {
+  font-family: 'Rosean', serif;
+  font-size: 48px !important;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.equipe .membros {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.equipe .membro p {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.8;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.equipe .membro img {
+  width: 70%;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.equipe .membro video {
+  width: 90%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  margin: 20px auto 0 auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* DEPOIMENTOS / FEEDBACKS */
+.depoimentos-feedbacks {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.depoimentos-feedbacks .titulo-esquerda {
+  text-align: left;
+  font-family: 'Rosean', serif;
+  font-size: 48px !important;
+  margin-bottom: 20px;
+}
+
+.depoimentos-feedbacks .texto-centralizado {
+  text-align: justify !important;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.depoimentos-feedbacks .video-depoimento video {
+  width: 90%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+.carousel-depoimentos .cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+}
+
+.carousel-depoimentos .cards img {
+  flex: 0 0 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: center;
+}
+
+.carousel-depoimentos .cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* CHAMADA CENTRALIZADA E CHAMATIVA - LUZ, CÂMERA E AÇÃO */
+.chamada-entre-cenas {
+  background: linear-gradient(135deg, #111, #000);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 16px;
+  margin: 60px 0;
+}
+
+.chamada-entre-cenas p {
+  font-family: 'Rosean', serif;
+  font-size: 32px; /* reduzido de 48px para 32px */
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* PADRÃO PARA TODOS OS H2 */
+h2 {
+  font-family: 'Rosean', serif !important;
+  font-size: 48px !important;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* PADRÃO PARA TODOS OS H3 */
+h3 {
+  font-family: 'Rosean', serif !important;
+  font-size: 30px !important;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* RESPONSIVO H2/H3 */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 36px !important;
+  }
+  h3 {
+    font-size: 24px !important;
+  }
+
+  .frase-video-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bastidores-esquerda video,
+  .equipe .membro img,
+  .equipe .membro video {
+    max-width: 100%;
+  }
+
+  .carousel-depoimentos .cards img {
+    flex: 0 0 200px;
+    height: 120px;
+  }
+
+  .depoimentos-feedbacks .titulo-esquerda {
+    font-size: 36px !important;
+  }
+
+  .depoimentos-feedbacks .video-depoimento video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sobre-esquerda {
+    text-align: left !important;
+  }
+
+  .sobre-esquerda p {
+    text-align: justify !important;
+  }
+
+  .sobre-esquerda .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  .chamada-entre-cenas p {
+    font-size: 24px; /* Responsivo também menor */
+  }
+}
+
+/* --------------------- MENU HAMBURGER COM X --------------------- */
+
+/* Checkbox escondido */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Menu lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* escondido */
+  width: 300px;
+  height: 100%;
+  background: #111;
+  padding-top: 80px;
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 20px 0;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Rosean', serif;
+  font-size: 20px;
+}
+
+/* Mostrar menu quando checkbox marcado */
+#menu-toggle:checked ~ .menu {
+  left: 0;
+}
+
+/* Botão X para fechar */
+.menu label.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1003;
+}
+
+/* Desktop: ocultar hamburger e menu */
+@media (min-width: 1024px) {
+  .hamburger,
+  .menu {
+    display: none;
+  }
+.digitar {
+  font-family: 'Rosean', serif !important;
+  font-size: 32px !important; /* agora força o tamanho menor */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: maquina 2s steps(24) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes maquina {
+  from { width: 0; }
+  to { width: 24ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+  100% { border-color: #fff; }
+}
+
